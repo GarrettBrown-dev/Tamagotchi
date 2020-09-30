@@ -6,12 +6,14 @@ namespace Tamagotchi.Models
 
   public class Pet
   {
-    private List<Pets> _instances = new List<Pets> { };
-    public string Name { get; set; }
 
+    public string Name { get; set; }
+    public string Img { get; set; }
+    public int Id { get; }
     public int Food { get; set; }
     public int Attention { get; set; }
     public int Rest { get; set; }
+    private static List<Pet> _instances = new List<Pet> { };
 
 
     public Pet(string name)
@@ -21,21 +23,35 @@ namespace Tamagotchi.Models
       Attention = 50;
       Rest = 50;
       _instances.Add(this);
+      Id = _instances.Count;
     }
 
-    public Feed()
+    public void Feed()
     {
       this.Food += 10;
     }
 
-    public Play()
+    public void Play()
     {
       this.Attention += 10;
     }
 
-    public Sleep()
+    public void Sleep()
     {
       this.Rest += 50;
+    }
+    public static List<Pet> GetAll()
+    {
+      Console.WriteLine();
+      return _instances;
+    }
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+    public static Pet Find(int searchId)
+    {
+      return _instances[searchId - 1];
     }
   }
 }

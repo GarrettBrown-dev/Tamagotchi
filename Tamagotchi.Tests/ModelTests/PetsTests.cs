@@ -16,19 +16,19 @@ namespace Tamagotchi.Tests
     [TestMethod]
     public void Pet_InstantiateAnInstanceOfPet_Pet()
     {
-      Pet newPet = new Pet("test");
-      Assert.AreEqual(typeof(Pet), newPet.GetType());
+      Pet bob = new Pet("test");
+      Assert.AreEqual(typeof(Pet), bob.GetType());
     }
     [TestMethod]
     public void Pet_InstantiateAnInstanceOfPet_newPet()
     {
       //Arrange
-      string cityName = "Amsterdam";
+      string name = "Bob";
       //Act
-      Pet newPet = new Pet(cityName);
-      string result = newPet.CityName;
+      Pet newPet = new Pet(name);
+      string result = newPet.Name;
       // Assert
-      Assert.AreEqual("Amsterdam", result);
+      Assert.AreEqual("Bob", result);
     }
     [TestMethod]
     public void GetAll_ReturnsEmptyList_PetList()
@@ -47,10 +47,10 @@ namespace Tamagotchi.Tests
     public void GetAll_ReturnsListOfItems_PetList()
     {
       // Arrange
-      string cityName1 = "Amsterdam";
-      string cityName2 = "Berlin";
-      Pet newPet1 = new Pet(cityName1);
-      Pet newPet2 = new Pet(cityName2);
+      string petName1 = "Bob";
+      string petName2 = "Fluffy";
+      Pet newPet1 = new Pet(petName1);
+      Pet newPet2 = new Pet(petName2);
       List<Pet> newList3 = new List<Pet> { newPet1, newPet2 };
 
       // Act
@@ -64,10 +64,10 @@ namespace Tamagotchi.Tests
     public void Find_FindItemsInList_Pet()
     {
       // Arrange
-      string cityName1 = "Amsterdam";
-      string cityName2 = "Berlin";
-      Pet newPet1 = new Pet(cityName1);
-      Pet newPet2 = new Pet(cityName2);
+      string petName1 = "Bob";
+      string petName2 = "Fluffy";
+      Pet newPet1 = new Pet(petName1);
+      Pet newPet2 = new Pet(petName2);
       List<Pet> newList3 = new List<Pet> { newPet1, newPet2 };
 
       // Act

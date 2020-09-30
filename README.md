@@ -66,8 +66,10 @@ Main Programs
 
 
 ### Other Links
-[GitHub](https://github.com/mmanchee)
+[Mike's GitHub](https://github.com/mmanchee)
 [Natalie's Github](https://github.com/murphynd)
+[Ben's Github](https://github.com/StollerSystem)
+[Garrett's Github](https://github.com/GarrettBrown-dev)
 
 ### License
 

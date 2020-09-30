@@ -21,18 +21,18 @@ namespace Tamagotchi.Controllers
     }
 
     [HttpPost("/pets")]
-    public ActionResult Create(string Name, string description)
+    public ActionResult Create(string Name)
     {
-      Pet myPet = new Pet(Name, description);
+      Pet myPet = new Pet(Name);
       return RedirectToAction("Index");
     }
 
-    [HttpPost("/pets/delete")]
-    public ActionResult Delete()
-    {
-      Pet.ClearAll();
-      return View();
-    }
+    // [HttpPost("/pets/delete")]
+    // public ActionResult Delete()
+    // {
+    //   Pet.ClearAll();
+    //   return View();
+    // }
 
     [HttpGet("/pets/{id}")]
     public ActionResult Show(int id)

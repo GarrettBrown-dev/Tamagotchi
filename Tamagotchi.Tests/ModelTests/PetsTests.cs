@@ -8,15 +8,73 @@ namespace Tamagotchi.Tests
   [TestClass]
   public class PetTests : IDisposable
   {
+    public void Dispose()
+    {
+      Pet.ClearAll();
+    }
+
     [TestMethod]
-    public void Pet_InstantiateAnInstanceOfPet_newPlace()
+    public void Pet_InstantiateAnInstanceOfPet_Pet()
+    {
+      Pet newPet = new Pet("test");
+      Assert.AreEqual(typeof(Pet), newPet.GetType());
+    }
+    [TestMethod]
+    public void Pet_InstantiateAnInstanceOfPet_newPet()
     {
       //Arrange
-
+      string cityName = "Amsterdam";
       //Act
+      Pet newPet = new Pet(cityName);
+      string result = newPet.CityName;
+      // Assert
+      Assert.AreEqual("Amsterdam", result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_PetList()
+    {
+      // Arrange
+      List<Pet> newList = new List<Pet> { };
+
+      // Act
+      List<Pet> result = Pet.GetAll();
+
 
       // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsListOfItems_PetList()
+    {
+      // Arrange
+      string cityName1 = "Amsterdam";
+      string cityName2 = "Berlin";
+      Pet newPet1 = new Pet(cityName1);
+      Pet newPet2 = new Pet(cityName2);
+      List<Pet> newList3 = new List<Pet> { newPet1, newPet2 };
 
+      // Act
+      List<Pet> result = Pet.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newList3, result);
+    }
+
+    [TestMethod]
+    public void Find_FindItemsInList_Pet()
+    {
+      // Arrange
+      string cityName1 = "Amsterdam";
+      string cityName2 = "Berlin";
+      Pet newPet1 = new Pet(cityName1);
+      Pet newPet2 = new Pet(cityName2);
+      List<Pet> newList3 = new List<Pet> { newPet1, newPet2 };
+
+      // Act
+      Pet result = Pet.Find(2);
+
+      // Assert
+      Assert.AreEqual(newPet2, result);
     }
   }
 }

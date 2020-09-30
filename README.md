@@ -66,10 +66,11 @@ Main Programs
 
 
 ### Other Links
-[Mike's GitHub](https://github.com/mmanchee)
-[Natalie's Github](https://github.com/murphynd)
-[Ben's Github](https://github.com/StollerSystem)
-[Garrett's Github](https://github.com/GarrettBrown-dev)
+[![Mike's GitHub](https://forthebadge.com/images/badges/built-with-love.svg](https://github.com/mmanchee)
+[![Natalie's GitHub](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/murphynd)
+[![Ben's GitHub](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/StollerSystem)
+[![Garrett's GitHub](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/GarrettBrown-dev)
+
 
 ### License
 

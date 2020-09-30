@@ -13,6 +13,8 @@ namespace Tamagotchi.Models
     public int Food { get; set; }
     public int Attention { get; set; }
     public int Rest { get; set; }
+
+    public bool Alive { get; set; }
     private static List<Pet> _instances = new List<Pet> { };
 
 
@@ -25,6 +27,7 @@ namespace Tamagotchi.Models
       Rest = 50;
       _instances.Add(this);
       Id = _instances.Count;
+      Alive = true;
     }
 
     public void Feed()
@@ -66,6 +69,11 @@ namespace Tamagotchi.Models
         pet.Food -= 5;
         pet.Attention -= 5;
         pet.Rest -= 5;
+
+        if (pet.Food <= 0 || pet.Attention <= 0 || pet.Rest <= 0)
+        {
+          pet.Alive = false;
+        }
       }
     }
   }

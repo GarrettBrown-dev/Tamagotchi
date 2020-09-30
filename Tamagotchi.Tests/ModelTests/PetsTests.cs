@@ -82,7 +82,6 @@ namespace Tamagotchi.Tests
       // Arrange
       string petName1 = "Bob";
       Pet newPet1 = new Pet(petName1);
-      // List<Pet> newList3 = new List<Pet> { newPet1 };
       // Act
       newPet1.Feed();
       // Assert

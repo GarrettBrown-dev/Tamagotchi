@@ -11,16 +11,24 @@
 }
 <ul>
   @foreach (Pet pet in Model)
-  {
-    <li><a href='/pets/@pet.Id'>@pet.Name</a></li>
-    <ul>
-      <p>Stats:</p>
-      <li>Hunger level: @pet.Food</li>
-      <li>Attention level: @pet.Attention</li>
-      <li>Energy level: @pet.Rest</li>
-    </ul>
+  { 
+    @if (pet.Alive)
+    {
+      <li><a href='/pets/@pet.Id'>@pet.Name</a></li>
+      <ul>
+        <p>Status: Alive and kickin'</p>
+        <li>Hunger level: @pet.Food</li>
+        <li>Attention level: @pet.Attention</li>
+        <li>Energy level: @pet.Rest</li>
+      </ul>
+    } else
+    {
+      <li><a href='/pets/@pet.Id'>@pet.Name</a></li>
+      <p>DEAD</p>
+    }  
   }
 </ul>
 
 <a href="/pets/new">Add a new pet.</a>
 
+ 

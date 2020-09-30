@@ -3,8 +3,9 @@
 @{
   Layout = "_Layout";
 }
-<img
+
 <h1>@Model.Name</h1>
+<img src="@Model.Image">
 <ul>
   <p>Stats:</p>
   <li>Name: @Model.Name</li>
@@ -14,13 +15,13 @@
 </ul>
 
 
-<form action="/pets/feed" method="post">
+<form action="/pets/@Model.Id/feed" method="post">
   <button type="submit" name="button">Feed!</button>
 </form>
-<form action="/pets/play" method="post">
+<form action="/pets/@Model.Id/play" method="post">
   <button type="submit" name="button">Play!</button>
 </form>
-<form action="/pets/sleep" method="post">
+<form action="/pets/@Model.Id/sleep" method="post">
   <button type="submit" name="button">Sleep!</button>
 </form>
 

@@ -1,14 +1,17 @@
+@model Tamagotchi.Models.Pet;
 @{
   Layout = "_Layout";
 }
+
 <form action="/pets" method="post">
   <label for="name">Choose your pets name: </label>
   <input id="name" name="name" type="text">
-  <input type="radio" name="image" value="https://img.pokemondb.net/artwork/croconaw.jpg" /><img src="https://img.pokemondb.net/artwork/croconaw.jpg"/>
-  <input type="radio" name="image" value="https://img.pokemondb.net/artwork/charmander.jpg" /><img src="https://img.pokemondb.net/artwork/charmander.jpg"/>
-  <input type="radio" name="image" value="https://img.pokemondb.net/artwork/pikachu.jpg" /><img src="https://img.pokemondb.net/artwork/pikachu.jpg"/>
-  <input type="radio" name="image" value="https://img.pokemondb.net/artwork/clefairy.jpg" /><img src="https://img.pokemondb.net/artwork/clefairy.jpg"/>
-  <input type="radio" name="image" value="https://img.pokemondb.net/artwork/vileplume.jpg" /><img src="https://img.pokemondb.net/artwork/vileplume.jpg"/>
-  <input type="radio" name="image" value="https://img.pokemondb.net/artwork/psyduck.jpg" /><img src="https://img.pokemondb.net/artwork/psyduck.jpg"/>
+  <b>Select Image: </b><br />
+  <img src="https://img.pokemondb.net/artwork/croconaw.jpg"/>@Html.RadioButton("image","https://img.pokemondb.net/artwork/croconaw.jpg",false)
+  <img src="https://img.pokemondb.net/artwork/charmander.jpg"/>@Html.RadioButton("image", "https://img.pokemondb.net/artwork/charmander.jpg",true)
+  <img src="https://img.pokemondb.net/artwork/pikachu.jpg"/>@Html.RadioButton("image", "https://img.pokemondb.net/artwork/pikachu.jpg",false)
+  <img src="https://img.pokemondb.net/artwork/clefairy.jpg"/>@Html.RadioButton("image", "https://img.pokemondb.net/artwork/clefairy.jpg", false)
+  <img src="https://img.pokemondb.net/artwork/vileplume.jpg"/>@Html.RadioButton("image", "https://img.pokemondb.net/artwork/vileplume.jpg", false)
+  <img src="https://img.pokemondb.net/artwork/psyduck.jpg"/>@Html.RadioButton("image", "https://img.pokemondb.net/artwork/psyduck.jpg", false)  
   <button type="submit">Submit</button>
 </form>

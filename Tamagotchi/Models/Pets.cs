@@ -8,7 +8,7 @@ namespace Tamagotchi.Models
   {
 
     public string Name { get; set; }
-    public string Img { get; set; }
+    public string Image { get; set; }
     public int Id { get; }
     public int Food { get; set; }
     public int Attention { get; set; }
@@ -16,9 +16,10 @@ namespace Tamagotchi.Models
     private static List<Pet> _instances = new List<Pet> { };
 
 
-    public Pet(string name)
+    public Pet(string name, string image)
     {
       Name = name;
+      Image = image;
       Food = 50;
       Attention = 50;
       Rest = 50;
@@ -28,16 +29,19 @@ namespace Tamagotchi.Models
 
     public void Feed()
     {
-      this.Food += 10;
+      TimePass();
+      this.Food += 25;
     }
 
     public void Play()
     {
-      this.Attention += 10;
+      TimePass();
+      this.Attention += 25;
     }
 
     public void Sleep()
     {
+      TimePass();
       this.Rest += 50;
     }
     public static List<Pet> GetAll()

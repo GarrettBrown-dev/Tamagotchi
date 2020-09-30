@@ -1,0 +1,27 @@
+@* @using Tamagotchi.Models; *@
+
+@{
+  Layout = "_Layout";
+}
+<img
+<h1>@Model.Name</h1>
+<ul>
+  <p>Stats:</p>
+  <li>Name: @Model.Name</li>
+  <li>Hunger level: @Model.Food</li>
+  <li>Attention level: @Model.Attention</li>
+  <li>Energy level: @Model.Rest</li>
+</ul>
+
+
+<form action="/pets/feed" method="post">
+  <button type="submit" name="button">Feed!</button>
+</form>
+<form action="/pets/play" method="post">
+  <button type="submit" name="button">Play!</button>
+</form>
+<form action="/pets/sleep" method="post">
+  <button type="submit" name="button">Sleep!</button>
+</form>
+
+<a href='/pets'>Back to pets</a>

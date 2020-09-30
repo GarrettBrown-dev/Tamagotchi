@@ -76,5 +76,17 @@ namespace Tamagotchi.Tests
       // Assert
       Assert.AreEqual(newPet2, result);
     }
+    [TestMethod]
+    public void Feed_FeedYourPet_Pet()
+    {
+      // Arrange
+      string petName1 = "Bob";
+      Pet newPet1 = new Pet(petName1);
+      // List<Pet> newList3 = new List<Pet> { newPet1 };
+      // Act
+      newPet1.Feed();
+      // Assert
+      Assert.AreEqual(60, newPet1.Food);
+    }
   }
 }

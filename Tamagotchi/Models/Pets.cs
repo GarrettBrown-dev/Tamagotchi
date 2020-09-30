@@ -53,5 +53,16 @@ namespace Tamagotchi.Models
     {
       return _instances[searchId - 1];
     }
+
+    public static void TimePass()
+    {
+      // List<Pet> petList = GetAll();
+      foreach (Pet pet in _instances)
+      {
+        pet.Food -= 5;
+        pet.Attention -= 5;
+        pet.Rest -= 5;
+      }
+    }
   }
 }
